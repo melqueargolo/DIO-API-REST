@@ -4,9 +4,10 @@ require __DIR__ . "/Config/config.php";
 
 
 $uri = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
-
+echo $uri;
 $uri = explode( '/', $uri );
-
+echo '<br>';
+var_dump($uri) ;
 
 if((isset($uri[1]) && $uri[1] != 'api') || (isset($uri[2]) && $uri[2] != 'v1')){
     header("HTTP/1.1 404 Not Found");
